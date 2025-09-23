@@ -4,8 +4,9 @@
 A C++ based Restaurant Menu System that manages food items, nutrition stats, and menus.  
 This project is being developed incrementally through design sprints.
 
--> Executive Summary (Sprint #1)
-[View the Executive Summary Webpage](https://fsyed7.github.io/restaurant-menu-system/)  
+-> Live Links
+- 📄 [Executive Summary](https://fsyed7.github.io/restaurant-menu-system/)
+- 📚 [Doxygen Documentation](https://fsyed7.github.io/restaurant-menu-system/docs/)
 ----------------------------------------------------------------------------------------
 
 The Sprint #1 summary introduces the project concept, UML diagram, initial class skeletons, and planned test coverage. It serves as the foundation for upcoming integration and improvements.
