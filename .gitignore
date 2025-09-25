@@ -1,0 +1,31 @@
+# Ignore Visual Studio cache, user settings, and temp files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.ipch
+
+# Build results
+[Bb]in/
+[Oo]bj/
+Debug/
+Release/
+x64/
+x86/
+
+# Compiled binaries
+*.exe
+*.dll
+*.lib
+*.pdb
+*.ilk
+
+# Logs and cache
+*.log
+*.tlog
+*.cache
+
+# Other VS-generated files
+*.vcxproj.user
+*.db
