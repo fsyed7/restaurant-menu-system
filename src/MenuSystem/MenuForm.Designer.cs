@@ -34,7 +34,6 @@
             // foodMenulayout
             // 
             this.foodMenulayout.AutoSize = true;
-            this.foodMenulayout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.foodMenulayout.Location = new System.Drawing.Point(36, 27);
             this.foodMenulayout.Name = "foodMenulayout";
             this.foodMenulayout.Size = new System.Drawing.Size(102, 84);
@@ -42,9 +41,11 @@
             // 
             // menuListLayout
             // 
+            this.menuListLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.menuListLayout.AutoSize = true;
-            this.menuListLayout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.menuListLayout.Location = new System.Drawing.Point(36, 344);
+            this.menuListLayout.Location = new System.Drawing.Point(36, 267);
             this.menuListLayout.Name = "menuListLayout";
             this.menuListLayout.Size = new System.Drawing.Size(991, 381);
             this.menuListLayout.TabIndex = 4;
@@ -52,7 +53,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(887, 60);
+            this.btnBack.Location = new System.Drawing.Point(887, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(116, 51);
             this.btnBack.TabIndex = 5;
@@ -63,7 +64,7 @@
             // 
             // rTextCart
             // 
-            this.rTextCart.Location = new System.Drawing.Point(734, 140);
+            this.rTextCart.Location = new System.Drawing.Point(739, 69);
             this.rTextCart.Name = "rTextCart";
             this.rTextCart.Size = new System.Drawing.Size(269, 179);
             this.rTextCart.TabIndex = 6;
@@ -73,7 +74,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(734, 121);
+            this.label1.Location = new System.Drawing.Point(739, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 7;
@@ -82,9 +83,9 @@
             // 
             // btnCheckout
             // 
-            this.btnCheckout.Location = new System.Drawing.Point(36, 785);
+            this.btnCheckout.Location = new System.Drawing.Point(36, 654);
             this.btnCheckout.Name = "btnCheckout";
-            this.btnCheckout.Size = new System.Drawing.Size(172, 58);
+            this.btnCheckout.Size = new System.Drawing.Size(132, 29);
             this.btnCheckout.TabIndex = 8;
             this.btnCheckout.Text = "Checkout";
             this.btnCheckout.UseVisualStyleBackColor = true;
@@ -94,7 +95,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1039, 942);
+            this.BackColor = System.Drawing.Color.Ivory;
+            this.ClientSize = new System.Drawing.Size(1039, 711);
             this.Controls.Add(this.btnCheckout);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rTextCart);
@@ -102,7 +104,7 @@
             this.Controls.Add(this.menuListLayout);
             this.Controls.Add(this.foodMenulayout);
             this.Name = "Menu_Select";
-            this.Text = "Menu Selection";
+            this.Text = "Menu";
             this.Load += new System.EventHandler(this.MenuForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

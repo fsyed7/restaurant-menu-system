@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 namespace MenuSystem {
     public class FoodItem {
 
-        string name, category;
-        double price;
-        int quantity;
-        NutritionStats stats;
-        Image image;
+        protected string name, category;
+        protected double price;
+        protected int quantity;
+        protected NutritionStats stats;
+        protected Image image;
         
         public FoodItem() {
             name = "";

@@ -17,7 +17,7 @@ namespace MenuSystem {
         enum states {menu, food }
         states state;
         List<FoodItem> cart;
-      
+        Color bgColor;
 
         public void SwitchState() {
             if (state == states.menu) {
@@ -63,6 +63,9 @@ namespace MenuSystem {
             pBox.Image = f.GetImage();
             
             textBox.Text = f.getdisplay();
+            textBox.Font = new Font("Arial", 15);
+            textBox.BorderStyle = BorderStyle.None;
+            textBox.BackColor = bgColor;
             panel.Size = new Size(650, 250);
             
             Size ins = new Size(200, 200);
@@ -70,11 +73,53 @@ namespace MenuSystem {
             pBox.Size = ins;
             panel.Controls.Add(pBox);
             panel.Controls.Add(textBox);
+
+
             panel.Controls.Add(btnbuy);
 
             btnbuy.Click += (sender, e) => {
                 addToCart(f);
                 
+            };
+
+            panel.FlowDirection = FlowDirection.LeftToRight;
+
+            foodMenulayout.Controls.Add(panel);
+            foodMenulayout.FlowDirection = FlowDirection.TopDown;
+        }
+
+        public void ListFoodwToppings(FoodItemwToppings f) {
+            FlowLayoutPanel panel = new FlowLayoutPanel();
+            PictureBox pBox = new PictureBox();
+            RichTextBox textBox = new RichTextBox();
+            Button btnbuy = new Button();
+            CheckedListBox clb = new CheckedListBox();
+            btnbuy.Size = new Size(100, 100);
+            btnbuy.Text = "Add to Cart";
+            pBox.SizeMode = PictureBoxSizeMode.Zoom;
+            pBox.Image = f.GetImage();
+
+            textBox.Text = f.getdisplay();
+            textBox.Font = new Font("Arial", 15);
+            textBox.BorderStyle = BorderStyle.None;
+            textBox.BackColor = bgColor;
+            panel.Size = new Size(650, 250);
+            foreach(Toppings t in f.getToppings()) {
+                clb.Items.Add(t.getDisplay(), false);
+            }
+            
+
+            Size ins = new Size(200, 200);
+            textBox.Size = ins;
+            pBox.Size = ins;
+            panel.Controls.Add(pBox);
+            panel.Controls.Add(textBox);
+            panel.Controls.Add(clb);
+            panel.Controls.Add(btnbuy);
+
+            btnbuy.Click += (sender, e) => {
+                addToCart(f);
+
             };
 
             panel.FlowDirection = FlowDirection.LeftToRight;
@@ -91,7 +136,7 @@ namespace MenuSystem {
             pBox.Image = m.getImage();
             
             
-            panel.Size = new Size(400, 300);
+            panel.Size = new Size(300, 300);
             
             
             Size ins = new Size(200, 200);
@@ -119,7 +164,12 @@ namespace MenuSystem {
         public void menuSelected(Menu m) {
             SwitchState();
             foreach(FoodItem f in m.getitems()) {
-                ListFood(f);
+                if(f is FoodItemwToppings) {
+                    ListFoodwToppings((FoodItemwToppings)f);
+                } else {
+                    ListFood(f);
+                }
+                
             }
         }
         
@@ -129,6 +179,9 @@ namespace MenuSystem {
             cart = new List<FoodItem>();
             state = states.menu;
             foodMenulayout.Visible = false;
+            bgColor = new Color();
+            bgColor = Color.Ivory;
+            //Menu_Select.BackColor = bgColor;
 
             // Create Nutrition Stats
             NutritionStats pastaNutrition = new NutritionStats(250, 10, 5, 30);
@@ -136,9 +189,17 @@ namespace MenuSystem {
             NutritionStats ajuiceNutrition = new NutritionStats(20,0,0,0);
             NutritionStats popNutrition = new NutritionStats(100, 0, 30, 0);
 
+            List<Toppings> burgertops = new List<Toppings>();
+
+            burgertops.Add(new Toppings("Cheese", 2, 50));
+            burgertops.Add(new Toppings("Tomato", 1, 10));
+            burgertops.Add(new Toppings("Lettuce", 0.50, 10));
+            burgertops.Add(new Toppings("Ketchup", 0.25, 20));
+
+
             // Create Food Items
             FoodItem pasta = new FoodItem("Pasta", "Main Course", 12.99, 10, pastaNutrition);
-            FoodItem burger = new FoodItem("Burger", "Fast Food", 9.99, 5, burgerNutrition);
+            FoodItemwToppings burger = new FoodItemwToppings("Burger", "Fast Food", 9.99, 5, burgerNutrition, burgertops);
             FoodItem applejuice = new FoodItem("Apple Juice", "Juice", 2.99, 20, ajuiceNutrition);
             FoodItem pop = new FoodItem("Pop", "Soft Drink", 3.99, 3, popNutrition);
 
