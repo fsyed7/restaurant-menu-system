@@ -26,6 +26,9 @@ namespace MenuSystem {
         public double getPrice() {
             return price;
         }
+        public string getName() {
+            return name;
+        }
 
         public string getDisplay() {
             return name + "\n$" + price + "\nCalories: " + cals + "\n";

@@ -43,13 +43,37 @@ namespace MenuSystem {
             MessageBox.Show(item.getName() + " has been added to cart");
             updateCart();
         }
+        public void removeFromCart(FoodItem item) {
+            cart.Remove(item);
+            updateCart();
+        }
         public void updateCart() {
             string carttext = "";
+            double total = 0;
             rTextCart.Text = carttext;
+            flpCart.Controls.Clear();
             foreach (FoodItem item in cart) {
-                carttext += item.getName() + "\n";
+                carttext += item.getCartName() + "\n";
+                total += item.getPrice();
+                Label lbl = new Label();
+                lbl.AutoSize= true;
+                lbl.Text = item.getCartName();
+                Button btn = new Button();
+                btn.Text = "X";
+                btn.Size = new Size(30, 30);
+                btn.Click += (sender, e) => {
+                    removeFromCart(item);
+                };
+                FlowLayoutPanel flp = new FlowLayoutPanel();
+                flp.FlowDirection = FlowDirection.LeftToRight;
+                flp.AutoSize = true;
+                flp.Controls.Add(lbl);
+                flp.Controls.Add(btn);
+                flpCart.Controls.Add(flp);
+                
             }
             rTextCart.Text = carttext;
+            lblCartTotal.Text = "Your Total: $" + total;
         }
         public void ListFood(FoodItem f) {
 
@@ -62,7 +86,7 @@ namespace MenuSystem {
             pBox.SizeMode = PictureBoxSizeMode.Zoom;
             pBox.Image = f.GetImage();
             
-            textBox.Text = f.getdisplay();
+            textBox.Text = f.getDisplay();
             textBox.Font = new Font("Arial", 15);
             textBox.BorderStyle = BorderStyle.None;
             textBox.BackColor = bgColor;
@@ -71,16 +95,20 @@ namespace MenuSystem {
             Size ins = new Size(200, 200);
             textBox.Size = ins;
             pBox.Size = ins;
+            btnbuy.Anchor = AnchorStyles.Left;
             panel.Controls.Add(pBox);
             panel.Controls.Add(textBox);
-
-
+            Label pad = new Label();
+            pad.Size = new Size(120, 80);
+            panel.Controls.Add(pad);
             panel.Controls.Add(btnbuy);
 
             btnbuy.Click += (sender, e) => {
                 addToCart(f);
                 
             };
+
+            
 
             panel.FlowDirection = FlowDirection.LeftToRight;
 
@@ -99,10 +127,14 @@ namespace MenuSystem {
             pBox.SizeMode = PictureBoxSizeMode.Zoom;
             pBox.Image = f.GetImage();
 
-            textBox.Text = f.getdisplay();
+            textBox.Text = f.getDisplay();
             textBox.Font = new Font("Arial", 15);
             textBox.BorderStyle = BorderStyle.None;
             textBox.BackColor = bgColor;
+            clb.BackColor= bgColor;
+            clb.BorderStyle= BorderStyle.None;
+            clb.CheckOnClick = true;
+
             panel.Size = new Size(650, 250);
             foreach(Toppings t in f.getToppings()) {
                 clb.Items.Add(t.getDisplay(), false);
@@ -112,16 +144,33 @@ namespace MenuSystem {
             Size ins = new Size(200, 200);
             textBox.Size = ins;
             pBox.Size = ins;
+            clb.Anchor = AnchorStyles.Left;
+            clb.Font = new Font("Arial", 12);
+            //label2.Text = clb.Size.ToString();
+            btnbuy.Anchor = AnchorStyles.Left;
+
             panel.Controls.Add(pBox);
             panel.Controls.Add(textBox);
             panel.Controls.Add(clb);
             panel.Controls.Add(btnbuy);
 
+            List<Toppings> list = new List<Toppings>();
+            
             btnbuy.Click += (sender, e) => {
-                addToCart(f);
-
+                list.Clear();
+                for (int i = 0; i < clb.Items.Count; i++) {
+                    if (clb.GetItemChecked(i)) {
+                        list.Add(f.getToppings().ElementAt(i));
+                    }
+                }
+                FoodItemwToppings ff = new FoodItemwToppings(f);
+                ff.setToppings(list);
+                addToCart(ff);
+                foreach (Toppings t in list) {
+                    label2.Text = t.getDisplay() + "\n";
+                }
             };
-
+            
             panel.FlowDirection = FlowDirection.LeftToRight;
 
             foodMenulayout.Controls.Add(panel);
@@ -150,7 +199,9 @@ namespace MenuSystem {
             panel.FlowDirection = FlowDirection.TopDown;
             lblname.Text = m.getName();
             pBox.Enabled = false;
+            
             lblname.Enabled = false;
+
 
             panel.Click += (sender, e) => {
                 menuSelected(m);

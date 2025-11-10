@@ -38,13 +38,20 @@ namespace MenuSystem {
             this.quantity = quantity;
             this.stats = new NutritionStats(cal,pro,fat,carbs);
         }
-
+        public FoodItem(FoodItem f) {
+            this.name = f.name;
+            this.category = f.category;
+            this.price = f.price;
+            this.quantity = f.quantity;
+            this.stats = f.getStats();
+            this.image = f.image;
+        }
         public void reduceQty() {
             if (this.quantity > 0) this.quantity--;
         }
 
         public string getName() { return name; }
-        public double getPrice() { return price; }
+        virtual public double getPrice() { return price; }
         public int getQuantity() { return quantity; }
         public NutritionStats getStats() { return stats; }
         public Image GetImage() { return image; }
@@ -55,11 +62,13 @@ namespace MenuSystem {
             return this.stats.getDisplayStats();
         }
 
-        public string getdisplay() {
+        public string getDisplay() {
             return name + " (" + category + ") - $" + price
         + "\n| Qty: " + quantity +  "\n" + stats.getDisplayStats();
         
-}
-
-}
+        }
+        virtual public string getCartName() {
+            return name + " - $" + price;
+        }
+    }
 }
