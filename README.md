@@ -6,7 +6,7 @@
 
 --------------------------------------------------------------------------------------
 
-A C++ based Restaurant Menu System that manages food items, nutrition stats, and menus.  
+A C# based Restaurant Menu System that manages food items, nutrition stats, and menus.  
 This project is being developed incrementally through design sprints.
 
 --------------------------------------------------------------------------------------
