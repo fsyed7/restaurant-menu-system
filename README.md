@@ -1,7 +1,7 @@
 ## Restaurant Menu System
 
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-brightgreen)
-![C++](https://img.shields.io/badge/language-C++-blue.svg)
+![C++](https://img.shields.io/badge/language-C#-blue.svg)
 ![Docs](https://img.shields.io/badge/Docs-Doxygen-blueviolet)
 
 --------------------------------------------------------------------------------------
