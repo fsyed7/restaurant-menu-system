@@ -73,8 +73,9 @@ PROJECT_ICON           =
 # into which the generated documentation will be written. If a relative path is
 # entered, it will be relative to the location where Doxygen was started. If
 # left blank the current directory will be used.
+OUTPUT_DIRECTORY = 
 
-OUTPUT_DIRECTORY       = C:\Users\dolep\Repo\restaurant-menu-system
+OPTIMIZE_OUTPUT_FOR_CSHARP = YES
 
 # If the CREATE_SUBDIRS tag is set to YES then Doxygen will create up to 4096
 # sub-directories (in 2 levels) under the output directory of each output format
@@ -534,13 +535,13 @@ TIMESTAMP              = NO
 # normally produced when WARNINGS is set to YES.
 # The default value is: NO.
 
-EXTRACT_ALL            = NO
+EXTRACT_ALL            = YES
 
 # If the EXTRACT_PRIVATE tag is set to YES, all private members of a class will
 # be included in the documentation.
 # The default value is: NO.
 
-EXTRACT_PRIVATE        = NO
+EXTRACT_PRIVATE        = YES
 
 # If the EXTRACT_PRIV_VIRTUAL tag is set to YES, documented private virtual
 # methods of a class will be included in the documentation.
@@ -558,7 +559,7 @@ EXTRACT_PACKAGE        = NO
 # included in the documentation.
 # The default value is: NO.
 
-EXTRACT_STATIC         = NO
+EXTRACT_STATIC         = YES
 
 # If the EXTRACT_LOCAL_CLASSES tag is set to YES, classes (and structs) defined
 # locally in source files will be included in the documentation. If set to NO,
@@ -583,7 +584,7 @@ EXTRACT_LOCAL_METHODS  = NO
 # are hidden.
 # The default value is: NO.
 
-EXTRACT_ANON_NSPACES   = NO
+EXTRACT_ANON_NSPACES   = YES
 
 # If this flag is set to YES, the name of an unnamed parameter in a declaration
 # will be determined by the corresponding definition. By default unnamed
@@ -991,7 +992,10 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = C:\Users\dolep\Repo\restaurant-menu-system\src
+INPUT                  =  \
+    MenuSystemWeb/MenuSystemWeb/Pages/Shared/FoodItem.cs \
+    MenuSystemWeb/MenuSystemWeb/Program.cs
+
 
 # This tag can be used to specify the character encoding of the source files
 # that Doxygen parses. Internally Doxygen uses the UTF-8 encoding. Doxygen uses
@@ -1095,7 +1099,13 @@ RECURSIVE              = YES
 # Note that relative paths are relative to the directory from which Doxygen is
 # run.
 
-EXCLUDE                =
+EXCLUDE                = \
+                    **/bin \
+                    **/obj \
+                    **/wwwroot/lib \
+                    **/.git \
+                    **/html \
+                    **/latex
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded
@@ -1206,7 +1216,7 @@ FILTER_SOURCE_PATTERNS =
 # (index.html). This can be useful if you have a project on for instance GitHub
 # and want to reuse the introduction page also for the Doxygen output.
 
-USE_MDFILE_AS_MAINPAGE =
+USE_MDFILE_AS_MAINPAGE = README.md
 
 # If the IMPLICIT_DIR_DOCS tag is set to YES, any README.md file found in sub-
 # directories of the project's root, is used as the documentation for that sub-
@@ -1237,14 +1247,14 @@ FORTRAN_COMMENT_AFTER  = 72
 # also VERBATIM_HEADERS is set to NO.
 # The default value is: NO.
 
-SOURCE_BROWSER         = NO
+SOURCE_BROWSER         = YES
 
 # Setting the INLINE_SOURCES tag to YES will include the body of functions,
 # multi-line macros, enums or list initialized variables directly into the
 # documentation.
 # The default value is: NO.
 
-INLINE_SOURCES         = NO
+INLINE_SOURCES         = YES
 
 # Setting the STRIP_CODE_COMMENTS tag to YES will instruct Doxygen to hide any
 # special comment blocks from generated source code fragments. Normal C, C++ and
