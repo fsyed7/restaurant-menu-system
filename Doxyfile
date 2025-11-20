@@ -2985,3 +2985,10 @@ MSCGEN_TOOL            =
 # command).
 
 MSCFILE_DIRS           =
+
+OUTPUT_DIRECTORY = docs
+INPUT = MenuSystemUI MenuSystemWeb
+RECURSIVE = YES
+FILE_PATTERNS = *.cs
+GENERATE_LATEX = NO
+EXTRACT_ALL = YES

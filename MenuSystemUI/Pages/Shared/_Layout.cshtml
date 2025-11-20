@@ -1,0 +1,69 @@
+﻿@{
+    var title = ViewData["Title"] as string ?? "Restaurant Menu System";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@title - Restaurant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="anim-theme">
+    <header class="border-bottom bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm"
+             style="background: linear-gradient(90deg, #e3f6f5 0%, #d6f5f3 50%, #c8efea 100%);">
+
+            <a class="navbar-brand d-flex align-items-center" asp-page="/Index">
+                <img src="~/images/logo.png"
+                     asp-append-version="true"
+                     style="height:32px; width:auto; padding:0; margin:0; background:none; border:none; object-fit:contain;" />
+
+                <span class="navbar-brand-text ms-2">Campus Bistro</span>
+
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" asp-page="/Home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" asp-page="/Menus/Index">Menus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" asp-page="/OrderSummary/Index">Order Summary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" asp-page="/About">About</a>
+                    </li>
+                </ul>
+            </div>
+
+        </>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="border-top py-3 mt-5">
+        <div class="container small text-muted d-flex justify-content-between">
+            <span>&copy; @DateTime.Now.Year Campus Bistro – Menu UI Team</span>
+            <span>Ready for POS · Database · Inventory · Transactions</span>
+        </div>
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
