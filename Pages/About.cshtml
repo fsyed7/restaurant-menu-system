@@ -1,0 +1,27 @@
+﻿@page
+@model MenuSystemUI.Pages.AboutModel
+@{
+    ViewData["Title"] = "About";
+}
+
+<section class="container py-4">
+    <h1 class="h4 mb-3">About Campus Bistro Menu UI</h1>
+    <p class="text-muted">
+        This application is the Menu UI for an animatronics-themed restaurant.
+        It is designed to integrate with four other teams in the enterprise system:
+        POS, Database, Inventory, and Transactions.
+    </p>
+
+    <ul class="text-muted">
+        <li>The <strong>Menu UI</strong> lets guests browse dishes, view nutrition, and add items to a cart.</li>
+        <li>The <strong>Database team</strong> will provide real menu &amp; item data via REST APIs.</li>
+        <li>The <strong>Inventory team</strong> will track stock when orders are placed.</li>
+        <li>The <strong>POS/Transactions teams</strong> will handle payments and receipts.</li>
+    </ul>
+
+    <p class="text-muted mb-0">
+        In this sprint, all integration points are coded and ready. When the other teams share their
+        API URLs, we only need to update the service configuration without changing the UI.
+    </p>
+</section>
+

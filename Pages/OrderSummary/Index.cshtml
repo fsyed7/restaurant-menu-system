@@ -1,0 +1,97 @@
+﻿@page
+@model MenuSystemUI.Pages.OrderSummary.IndexModel
+@{
+    ViewData["Title"] = "Order Summary";
+}
+
+<section class="container py-4">
+    <header class="mb-3">
+        <h1 class="h4 mb-1">Order summary</h1>
+        <p class="text-muted mb-0">
+            Review your cart before sending the order to backend services.
+        </p>
+    </header>
+
+    @if (!string.IsNullOrEmpty(Model.Message))
+    {
+        <div class="alert alert-success">@Model.Message</div>
+    }
+
+    <div class="row">
+        <div class="col-12 col-lg-8">
+            <div class="card checkout-card mb-3">
+                <div class="card-body">
+                    @if (!Model.Items.Any())
+                    {
+                        <p class="text-muted mb-0">
+                            Your cart is empty. Go back to the <a asp-page="/Menus/Index">menu</a> to add items.
+                        </p>
+                    }
+                    else
+                    {
+                        <table class="table align-middle mb-0">
+                            <thead class="small text-muted">
+                                <tr>
+                                    <th>Item</th>
+                                    <th class="text-end">Qty</th>
+                                    <th class="text-end">Price</th>
+                                    <th class="text-end">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Items)
+                                {
+                                    <tr>
+                                        <td>
+                                            <strong>@item.Name</strong>
+                                            @if (!string.IsNullOrEmpty(item.ToppingsSummary))
+                                            {
+                                                <div class="small text-muted">
+                                                    Toppings: @item.ToppingsSummary
+                                                </div>
+                                            }
+                                        </td>
+                                        <td class="text-end">@item.Quantity</td>
+                                        <td class="text-end">@item.UnitPrice.ToString("C")</td>
+                                        <td class="text-end">@item.LineTotal.ToString("C")</td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr class="total-row">
+                                    <td colspan="3" class="text-end fw-semibold">Order total</td>
+                                    <td class="text-end fw-bold">@Model.Total.ToString("C")</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+            <div class="card checkout-card">
+                <div class="card-body">
+                    <h2 class="h6 mb-3">Actions</h2>
+
+                    <form method="post" asp-page-handler="PlaceOrder" class="mb-2">
+                        <button type="submit"
+                                class="btn btn-primary w-100"
+                                @(Model.Items.Any() ? "" : "disabled")>
+                            Place order
+                        </button>
+                    </form>
+
+                    <form method="post" asp-page-handler="Clear">
+                        <button type="submit"
+                                class="btn btn-outline-secondary w-100"
+                                @(Model.Items.Any() ? "" : "disabled")>
+                            Clear cart
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
