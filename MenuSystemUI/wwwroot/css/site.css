@@ -1,0 +1,352 @@
+/* base */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+/* ===== Soft teal app style (like reference) ===== */
+
+:root {
+    --brand-font: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --color-bg: #e4f2ef; /* page background */
+    --color-surface: #ffffff; /* cards */
+    --color-primary: #0f766e; /* teal */
+    --color-primary-soft: #c7ece6;
+    --color-text-main: #1f2933;
+    --color-text-muted: #6b7280;
+    --shadow-card: 0 8px 20px rgba(15, 23, 42, 0.12);
+}
+
+body {
+    background-color: var(--color-bg);
+    font-family: var(--brand-font);
+    color: var(--color-text-main);
+}
+
+/* navbar logo */
+.brand-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+}
+
+/* headings */
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+/* HOME hero */
+.home-hero {
+    background-color: var(--color-primary-soft);
+}
+
+/* ==== Menus page ==== */
+
+.menus-page {
+    width: 100%;
+}
+
+
+/* category pill bar */
+.menu-category-bar {
+    background-color: var(--color-surface);
+    border-radius: 999px;
+    padding: 0.4rem;
+    box-shadow: 0 4px 10px rgba(15,23,42,0.08);
+}
+
+.menu-category-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 0.3rem 0.9rem;
+    border: none;
+    background: transparent;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+}
+
+    .menu-category-pill.active {
+        background-color: var(--color-primary);
+        color: #fff;
+    }
+
+/* search input style */
+.menu-search {
+    border-radius: 999px;
+    border: none;
+    padding-left: 2.5rem;
+    box-shadow: 0 4px 10px rgba(15,23,42,0.08);
+}
+
+    .menu-search::placeholder {
+        color: var(--color-text-muted);
+    }
+
+/* position icon over search */
+.menu-search-wrapper {
+    position: relative;
+}
+
+.menu-search-icon {
+    position: absolute;
+    left: 0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+/* cards */
+.menu-card {
+    border-radius: 1.2rem;
+    overflow: hidden;
+    border: none;
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-card);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+    .menu-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+    }
+
+.menu-card-img {
+    height: 160px;
+    object-fit: cover;
+}
+
+/* tiny info row under title */
+.menu-card-meta {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+/* price tag aligned bottom right */
+.menu-card-footer {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* ==== Details page ==== */
+
+.food-details-page {
+    max-width: 1100px;
+}
+
+.food-hero {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: none;
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-card);
+}
+
+.food-hero-img {
+    height: 260px;
+    object-fit: cover;
+}
+
+.food-meta-row {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* nutrition box */
+.nutrition-card {
+    border-radius: 1.2rem;
+    border: none;
+    background-color: var(--color-surface);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+}
+
+/* add-to-cart button style */
+.btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+    .btn-primary:hover {
+        background-color: #115e57;
+        border-color: #115e57;
+    }
+
+/* Make main area fill the screen and use background color */
+main {
+    min-height: calc(100vh - 120px); /* header + footer approx */
+    background-color: var(--color-bg);
+}
+
+/* Better navbar styling */
+.navbar {
+    background-color: #0b3b3a !important; /* dark teal bar */
+}
+
+.navbar-brand,
+.navbar-brand span,
+.navbar-nav .nav-link {
+    color: #f9fafb !important; /* white text */
+}
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        color: #facc15 !important; /* yellow on hover/active */
+    }
+
+
+
+/* ---------- Animatronics Theme ---------- */
+
+:root {
+    --anim-bg: #e1f5f2;
+    --anim-bg-alt: #fdf5ff;
+    --anim-primary: #0c524f;
+    --anim-primary-soft: #188879;
+    --anim-accent: #ffb648;
+    --anim-accent-pink: #ff7ab8;
+    --anim-card: #ffffff;
+    --anim-text-main: #102a43;
+    --anim-text-muted: #6b7280;
+}
+
+.anim-theme {
+    background-color: var(--anim-bg);
+    font-family: "Baloo 2", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* navbar already dark teal; just align colours */
+.navbar {
+    background: linear-gradient(90deg, #0b3b3a, #188879);
+}
+
+.navbar-brand span {
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+/* Home hero – animatronic park vibe */
+.home-hero {
+    background: radial-gradient(circle at 0% 0%, var(--anim-accent-pink) 0, transparent 45%), radial-gradient(circle at 100% 0%, #7dd3fc 0, transparent 45%), radial-gradient(circle at 50% 100%, var(--anim-accent) 0, transparent 50%), var(--anim-bg);
+}
+
+    .home-hero .brand-logo {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, var(--anim-primary-soft), var(--anim-accent-pink));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+        overflow: hidden;
+    }
+
+    .home-hero h1,
+    .home-hero .h3 {
+        color: var(--anim-text-main);
+    }
+
+/* Primary buttons – glowing hover */
+.btn-primary {
+    background: linear-gradient(135deg, var(--anim-primary-soft), var(--anim-accent));
+    border-color: var(--anim-primary-soft);
+    font-weight: 600;
+    box-shadow: 0 6px 16px rgba(12, 82, 79, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+    .btn-primary:hover {
+        filter: brightness(1.05);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(12, 82, 79, 0.5);
+    }
+
+.btn-outline-secondary {
+    border-radius: 999px;
+}
+
+/* Tiny pulse on main CTA in hero */
+.home-hero .btn-primary {
+    animation: hero-pulse 2.6s infinite;
+}
+
+@keyframes hero-pulse {
+    0%, 100% {
+        box-shadow: 0 6px 16px rgba(12, 82, 79, 0.35);
+    }
+
+    50% {
+        box-shadow: 0 0 0 8px rgba(24, 136, 121, 0.25);
+    }
+}
+
+/* Cards – give them a bit more playful depth */
+.menu-card,
+.food-hero,
+.nutrition-card {
+    background-color: var(--anim-card);
+    border-radius: 1.4rem;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+    border: none;
+}
+
+    .menu-card:hover {
+        transform: translateY(-4px) scale(1.01);
+        box-shadow: 0 18px 36px rgba(15, 23, 42, 0.25);
+    }
+
+/* Category pills already exist; just colour tweak */
+.menu-category-bar {
+    background-color: var(--anim-bg-alt);
+}
+
+.menu-category-pill.active {
+    background: linear-gradient(135deg, var(--anim-primary-soft), var(--anim-accent));
+}
+
+/* Order summary table tone */
+.order-summary-card {
+    border-radius: 1.4rem;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.15);
+    border: none;
+}
+
+/* Make main content always fill height */
+main {
+    min-height: calc(100vh - 120px);
+}
+
+.navbar-brand-text {
+    color: #064e42 !important;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+/* Navbar text colors for light background */
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link,
+.brand-text {
+    color: #064e42 !important; /* deep teal, good contrast */
+}
+
+    .navbar-light .navbar-nav .nav-link:hover {
+        color: #046c5c !important;
+    }
+
