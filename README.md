@@ -1,49 +1,108 @@
-## Restaurant Menu System
+🍽 Restaurant Menu System
 
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-brightgreen)
-![C++](https://img.shields.io/badge/language-Cs-blue.svg)
-![Docs](https://img.shields.io/badge/Docs-Doxygen-blueviolet)
+-> Project Description
 
---------------------------------------------------------------------------------------
+The Restaurant Menu System is an enterprise-style application developed in multiple design sprints.
+It models restaurant menus, food items, nutrition data, and order flows, and provides a professional UI interface that will integrate with other enterprise components such as:
+.POS System
+.Inventory System
+.Transactions System
+.Database System
+The project has evolved from a backend design model into a multi-page web application using ASP.NET Razor Pages.
 
-A C# based Restaurant Menu System that manages food items, nutrition stats, and menus.  
-This project is being developed incrementally through design sprints.
+-> Live Links
 
---------------------------------------------------------------------------------------
+.Executive Summary:
+https://fsyed7.github.io/restaurant-menu-system/index.html
 
-##  Live Links
--  [Executive Summary](https://fsyed7.github.io/restaurant-menu-system/index.html)  
--  [Doxygen Documentation](https://fsyed7.github.io/restaurant-menu-system/html/index.html)  
+.Doxygen Documentation:
+https://fsyed7.github.io/restaurant-menu-system/html/index.html
 
---------------------------------------------------------------------------------------
+-> System Components
 
-##  Sprint #1 Summary
-The Sprint #1 summary introduces the project concept, UML diagram, initial class skeletons, and planned test coverage.  
-It serves as the foundation for upcoming integration and improvements.
+The system is built around the following core models:
+.FoodItem → Represents a dish including name, price, category, stock, and nutrition.
+.NutritionStats → Stores calories, protein, fat, and carbs.
+.Menu → Groups food items into sections such as Dinner and Drinks.
+.Toppings → Optional add-ons associated with menu items.
+.Order Cart → Holds multiple dishes with quantities and selected toppings.
 
---------------------------------------------------------------------------------------
+-> Sprint History
 
-##  Project Overview
-The system models a digital restaurant menu with three core entities:
+# Sprint 1 – Project Foundation
+Focus: Design & structure
+.Defined system concept and goals
+.Created UML class diagram
+.Authored executive summary website
+.Built initial C++ class skeletons
+.Configured Doxygen for documentation
+.Planned testing strategy
 
-- FoodItem → Represents a dish with name, category, price, quantity, and nutrition info.  
-- NutritionStats → Holds details like calories, protein, fat, and carbs.  
-- Menu → Groups multiple food items under a type (e.g., Breakfast, Lunch, Dinner).  
+# Sprint 2 – Functional Expansion & Early Integration
+Focus: Backend logic + system communication design
+.Implemented models and business logic
+.Attempted enterprise integration planning
+.Defined data exchange formats with:
+->Database System
+->Inventory System
+->Transactions System
+->POS System
+.Created architecture table mapping teams to data fields
+.Identified API boundaries and responsibilities
 
---------------------------------------------------------------------------------------
+# Sprint 3 – UI Transformation & Architecture Refinement
+Focus: User experience + enterprise readiness
+Major improvements:
+.Migrated from WinForms UI → ASP.NET Razor Pages
+.Built multi-page web interface:
+->Home
+->Menus
+->Item Details
+->Order Summary
+->About
 
-##  Sprint Roadmap
-- Sprint #1: Introduce concept, UML diagram, executive summary webpage, and class skeletons.  
-- Sprint #2: Add functionality and attempt integration with other groups’ components.  
-- Sprint #3: Improve features, testing coverage, and refine UI/UX.  
-- Final Presentation: Demonstrate the fully integrated enterprise system component.  
+.Implemented:
+->Shopping cart system
+->Topping selections
+->Order summary calculation
 
---------------------------------------------------------------------------------------
+.Restructured services for integration readiness
+.Added:
 
-## Team Members
-- Ella Kubica  
-- Le Phuong Anh Do  
-- Faisal Ahmed Syed  
+->Improved UI layout and styling
+->Responsive design
+->Data models ready for API replacement
+.Finalized enterprise workflow diagrams
+
+-> Planned Integration
+This system is API-ready and structured for future integration:
+
+System	      | Purpose	                | Data
+Database	    |Stores food & menu data	|MenuId, FoodId, Name, Price
+Inventory   	|Tracks stock	            |FoodId, QuantitySold
+Transactions	|Processes payments       |TransactionId, Date, Amount
+POS	          |Order processing         |ItemId, Quantity
+
+All current services use mock data and can be swapped for real APIs without changing UI logic.
+
+->Testing & Validation
+.Manual UI validation
+.Business logic testing
+.Regression verification across sprints
+.Doxygen verification of model documentation
+
+->Technologies Used
+.C# / .NET
+.ASP.NET Razor Pages
+.Doxygen
+.GitHub Pages
+.UML (PlantUML)
+.Visual Studio
+
+-> Team Members
+.Faisal Ahmed Syed
+.Ella Kubica
+.Le Phuong Anh Do
 
 
 
