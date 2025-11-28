@@ -1,4 +1,4 @@
-# 🍽 Restaurant Menu System
+# Restaurant Menu System
 
 -> Project Description
 
@@ -28,7 +28,6 @@ The system is built around the following core models:
 .Order Cart → Holds multiple dishes with quantities and selected toppings.
 
 -> Sprint History
-
 # Sprint 1 – Project Foundation
 Focus: Design & structure
 .Defined system concept and goals
@@ -65,16 +64,14 @@ Major improvements:
 ->Shopping cart system
 ->Topping selections
 ->Order summary calculation
-
 .Restructured services for integration readiness
 .Added:
-
 ->Improved UI layout and styling
 ->Responsive design
 ->Data models ready for API replacement
 .Finalized enterprise workflow diagrams
 
--> Planned Integration
+# Planned Integration
 This system is API-ready and structured for future integration:
 
 System	      | Purpose	                | Data
@@ -85,13 +82,13 @@ POS	          |Order processing         |ItemId, Quantity
 
 All current services use mock data and can be swapped for real APIs without changing UI logic.
 
-->Testing & Validation
+# Testing & Validation
 .Manual UI validation
 .Business logic testing
 .Regression verification across sprints
 .Doxygen verification of model documentation
 
-->Technologies Used
+# Technologies Used
 .C# / .NET
 .ASP.NET Razor Pages
 .Doxygen
@@ -99,7 +96,7 @@ All current services use mock data and can be swapped for real APIs without chan
 .UML (PlantUML)
 .Visual Studio
 
--> Team Members
+# Team Members
 .Faisal Ahmed Syed
 .Ella Kubica
 .Le Phuong Anh Do
