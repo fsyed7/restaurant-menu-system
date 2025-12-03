@@ -19,11 +19,15 @@ namespace MenuSystemUI.Pages.OrderSummary
         [TempData]
         public string? Message { get; set; }
 
-        public IndexModel(CartService cart, InventoryService inventory, DatabaseService database)
+        //transaction
+        private readonly TransactionService _transactionService;
+
+        public IndexModel(CartService cart, InventoryService inventory, DatabaseService database, TransactionService transaction)
         {
             _cart = cart;
             _inventory = inventory;
             _database = database;
+            _transactionService = transaction;
         }
 
         public void OnGet()
