@@ -1,0 +1,12 @@
+﻿version: '3.8'
+
+services:
+  menusystemui:
+    image: menusystemui:latest
+    container_name: MenuSystemUI
+    build:
+      context: . # The build context is the root directory
+      dockerfile: MenuSystemUI/Dockerfile # Path to the Dockerfile
+    ports:
+      # Map host port 6767 to container port 8080
+      - "6767:8080"
