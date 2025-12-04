@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['builder_0',['builder',['../_menu_system_u_i_2_program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5',1,'builder:&#160;Program.cs'],['../_menu_system_web_2_menu_system_web_2_program_8cs.html#a2f78352277081c620fd4cf92a5ce15e5',1,'builder:&#160;Program.cs']]]
+  ['databaseservice_0',['DatabaseService',['../class_menu_system_u_i_1_1_services_1_1_database_service.html',1,'MenuSystemUI::Services']]],
+  ['detailsmodel_1',['DetailsModel',['../class_menu_system_u_i_1_1_pages_1_1_menus_1_1_details_model.html',1,'MenuSystemUI::Pages::Menus']]]
 ];

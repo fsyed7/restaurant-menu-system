@@ -24,35 +24,22 @@
 */
 var NAVTREE =
 [
-  [ "Restaurant Menu System", "index.html", [
+  [ "My Project", "index.html", [
+    [ "The MIT License (MIT)", "md__menu_system_u_i_2wwwroot_2lib_2jquery-validation_2_l_i_c_e_n_s_e.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
-      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
-      [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
-        [ "Properties", "functions_prop.html", null ]
-      ] ]
-    ] ],
-    [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ]
-      ] ]
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"_8_n_e_t_core_app_00_version_0av8_80_8_assembly_attributes_8cs.html",
-"class_menu_system_web_1_1_pages_1_1_privacy_model.html#a0f409a573d70a67ef1b82ec768c396a9"
+"annotated.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

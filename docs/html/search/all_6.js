@@ -1,11 +1,6 @@
 var searchData=
 [
-  ['fat_0',['Fat',['../class_menu_system_u_i_1_1_models_1_1_nutrition_stats.html#a407b2bde81baf7278118614659a25116',1,'MenuSystemUI::Models::NutritionStats']]],
-  ['filter_1',['Filter',['../class_menu_system_u_i_1_1_pages_1_1_menus_1_1_index_model.html#aa6f251705b52d0a9b35d88222ad3e73b',1,'MenuSystemUI::Pages::Menus::IndexModel']]],
-  ['food_2',['Food',['../class_menu_system_u_i_1_1_pages_1_1_menus_1_1_details_model.html#a774978332bc07a331cef70f9ee8fa3c7',1,'MenuSystemUI::Pages::Menus::DetailsModel']]],
-  ['foodid_3',['FoodId',['../class_menu_system_u_i_1_1_models_1_1_cart_item.html#a3a944ef52b3bf53176c02ca3c06211f6',1,'MenuSystemUI::Models::CartItem']]],
-  ['fooditem_4',['FoodItem',['../class_menu_system_u_i_1_1_models_1_1_food_item.html',1,'MenuSystemUI.Models.FoodItem'],['../class_menu_system_web_1_1_pages_1_1_shared_1_1_food_item.html',1,'MenuSystemWeb.Pages.Shared.FoodItem'],['../class_menu_system_web_1_1_pages_1_1_shared_1_1_food_item.html#a50a846c245fc732097f601a1dd9f81f6',1,'MenuSystemWeb.Pages.Shared.FoodItem.FoodItem()'],['../class_menu_system_web_1_1_pages_1_1_shared_1_1_food_item.html#a867285a5727d6351a89623cc206b59ef',1,'MenuSystemWeb.Pages.Shared.FoodItem.FoodItem(string name, double price, int quantity, int cals)']]],
-  ['fooditem_2ecs_5',['FoodItem.cs',['../_menu_system_u_i_2_models_2_food_item_8cs.html',1,'(Global Namespace)'],['../_menu_system_web_2_menu_system_web_2_pages_2_shared_2_food_item_8cs.html',1,'(Global Namespace)']]],
-  ['fooditemwithtoppings_6',['FoodItemWithToppings',['../class_menu_system_u_i_1_1_models_1_1_food_item_with_toppings.html',1,'MenuSystemUI.Models.FoodItemWithToppings'],['../class_menu_system_u_i_1_1_models_1_1_food_item_with_toppings.html#aec6f6963fe41e75e8d8acdc9c380f82f',1,'MenuSystemUI.Models.FoodItemWithToppings.FoodItemWithToppings()'],['../class_menu_system_u_i_1_1_models_1_1_food_item_with_toppings.html#ae6fa24821a3fab8017bb366d509db9db',1,'MenuSystemUI.Models.FoodItemWithToppings.FoodItemWithToppings(string name, string category, double price, int quantity, NutritionStats stats, List&lt; Toppings &gt; toppings)']]],
-  ['fooditemwithtoppings_2ecs_7',['FoodItemWithToppings.cs',['../_food_item_with_toppings_8cs.html',1,'']]]
+  ['imenudataservice_0',['IMenuDataService',['../interface_menu_system_u_i_1_1_services_1_1_i_menu_data_service.html',1,'MenuSystemUI::Services']]],
+  ['indexmodel_1',['IndexModel',['../class_menu_system_u_i_1_1_pages_1_1_menus_1_1_index_model.html',1,'MenuSystemUI.Pages.Menus.IndexModel'],['../class_menu_system_u_i_1_1_pages_1_1_order_summary_1_1_index_model.html',1,'MenuSystemUI.Pages.OrderSummary.IndexModel']]],
+  ['inventoryservice_2',['InventoryService',['../class_menu_system_u_i_1_1_services_1_1_inventory_service.html',1,'MenuSystemUI::Services']]]
 ];
