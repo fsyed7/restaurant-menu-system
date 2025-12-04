@@ -9,6 +9,7 @@ namespace MenuSystemUI.Models
         public FoodItemWithToppings() : base() { }
 
         public FoodItemWithToppings(
+            int id,
             string name,
             string category,
             double price,
@@ -17,6 +18,7 @@ namespace MenuSystemUI.Models
             List<Toppings> toppings)
             : base()
         {
+            Id = id;
             Name = name;
             Category = category;
             Price = price;        // base price only

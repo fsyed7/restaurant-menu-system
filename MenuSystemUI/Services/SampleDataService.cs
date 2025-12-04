@@ -38,15 +38,14 @@ namespace MenuSystemUI.Services
                 Description = "Creamy Alfredo pasta with parmesan and fresh herbs."
             };
 
-            var burger = new FoodItemWithToppings(
-                name: "Signature Burger",
-                category: "Grill & Burger",
-                price: 9.99,
-                quantity: 5,
-                stats: burgerStats,
-                toppings: burgerTops)
-            {
-                Id = 2,
+            var burger = new FoodItemWithToppings { 
+                Id = 2, 
+                Name = "Signature Burger",
+                Category = "Grill & Burger",
+                Price = 9.99,
+                Quantity = 5,
+                Stats = burgerStats,
+                Toppings = burgerTops,
                 ImagePath = "/images/burger-hero.jpg",
                 Description = "Juicy double-patty burger with customizable toppings."
             };

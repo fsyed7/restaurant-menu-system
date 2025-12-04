@@ -1,8 +1,24 @@
-﻿namespace MenuSystemUI.Models
+﻿using System.Xml.Linq;
+
+namespace MenuSystemUI.Models
 {
     public class FoodItem
     {
-        public FoodItem(int id, string name, string category, double price, int quantity, int cals, string description, string? imagePath) {
+        public FoodItem()
+        {
+            Id = 0;
+            Name = "none";
+            Category = "category";
+            Price = 0;
+            Quantity = 0;
+            Stats.Calories = 0;
+            Description = "description";
+            ImagePath = "imagePath";
+        }
+
+        public FoodItem(int id, string name, string category, double price, int quantity, int cals, string description, string? imagePath) 
+            : base ()
+        {
             Id = id;
             Name = name;
             Category = category;
