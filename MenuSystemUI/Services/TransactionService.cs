@@ -1,6 +1,7 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 using System;
+using MenuSystemUI.Models;
 
 namespace MenuSystemUI.Services
 {
@@ -14,16 +15,22 @@ namespace MenuSystemUI.Services
             _http = http;
         }
 
-        public async Task<bool> AddTransactionAsync(double price, string foodId)
+        public async Task<bool> AddTransactionAsync(IReadOnlyList<CartItem> items)
         {
-            string safeFoodId = Uri.EscapeDataString(foodId);
-            string safeSource = Uri.EscapeDataString("menu");
+            string contentstring = "/add_transaction/";
+            foreach (CartItem item in items) {
+                string safeFood = Uri.EscapeDataString(item.Name);
+                string safeSource = Uri.EscapeDataString("menu");
+                contentstring += $"{item.UnitPrice}/{safeFood}/{safeSource}/";
+            }
 
-            string url = $"/add_transaction/{price}/{safeFoodId}/{safeSource}";
+            string url = "/transactions"; //TO DO add endpoint
+            HttpContent content = new StringContent(contentstring);
 
             try
             {
-                var response = await _http.GetAsync(url);
+                var response = await _http.PostAsync(url,content);
+                
                 return response.IsSuccessStatusCode;
             }
             catch

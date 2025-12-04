@@ -2,6 +2,7 @@
 using System;
 using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
@@ -54,25 +55,22 @@ namespace MenuSystemUI.Services
                 return true;
             }
 
+           
             try {
-                int foodId, cals, quantity;
-                string name, category, desc;
-                double price;
-                string json = $"{{\"foodId\": {foodId}, \"Name\":{name}, \"Category\":{category}, \"Price\":{price}, \"Quantity\":{quantity}, \"NutStatsCal\":{cals}, \"Description\":{desc}}}";
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-                var response = await client.PostAsync(apiUrl, content);
+                var response = await client.GetAsync(apiUrl);
 
                 if (response.IsSuccessStatusCode) {
-                    Console.WriteLine("Inventory successfully updated in Inventory Management System!");
-                    FoodItem food = new FoodItem(foodId,name,category, price, quantity, cals, desc, "\\src\\testimage.jpg");
-                    menu.Items.Add(food);
+                    string json = await response.Content.ReadAsStringAsync();
+                    //TODO update to actual deserializer
+                    JsonSerializer.Deserialize<Models.Menu>(json);
+                    Console.WriteLine("Retrieved menu and food item data successfully.");
+                    Console.WriteLine($"Raw JSON Response: {json}");
                     return true;
+                } else {
+                    Console.WriteLine($"Inventory API returned error: {response.StatusCode}");
                 }
-
-                Console.WriteLine($"Inventory API returned error: {response.StatusCode}");
             } catch (Exception ex) {
-                Console.WriteLine($"Failed to update inventory: {ex.Message}");
+                Console.WriteLine($"Failed to retrieve menus: {ex.Message}");
             }
 
             return false;

@@ -2,6 +2,8 @@
 @model MenuSystemUI.Pages.OrderSummary.IndexModel
 @{
     ViewData["Title"] = "Order Summary";
+    HttpClient client = new HttpClient();
+    Services.TransactionService service = new Services.TransactionService(client);
 }
 
 <section class="container py-4">
@@ -85,7 +87,8 @@
                     <form method="post" asp-page-handler="Clear">
                         <button type="submit"
                                 class="btn btn-outline-secondary w-100"
-                                @(Model.Items.Any() ? "" : "disabled")>
+                                @(Model.Items.Any() ? "" : "disabled")
+                                onclick=@service.AddTransactionAsync(Model.Items);>
                             Clear cart
                         </button>
                     </form>
