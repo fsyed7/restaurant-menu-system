@@ -2,6 +2,17 @@
 {
     public class FoodItem
     {
+        public FoodItem(int id, string name, string category, double price, int quantity, int cals, string description, string? imagePath) {
+            Id = id;
+            Name = name;
+            Category = category;
+            Price = price;
+            Quantity = quantity;
+            Stats.Calories = cals;
+            Description = description;
+            ImagePath = imagePath;
+        }
+
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Category { get; set; } = string.Empty;
